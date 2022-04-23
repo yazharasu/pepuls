@@ -1,0 +1,132 @@
+.feedbar-popup {
+    display:flex;
+    flex-direction: row;
+    position: relative;
+    background-color: white;
+    width: 95vw;
+    height: 95vh;
+    margin: 5px 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px 0px rgba(130,130,130,1);
+}
+
+.left-post-container {
+    width: 60%;
+    background-color: black ;
+    position: relative;;
+}
+.right-post-container {
+    width: 40%;
+    padding-top: 20px;
+}
+.close-button-popup{
+    position: absolute;
+    left: 30px;
+    top: 20px;
+}
+.close-button-popup svg{
+    color: white;
+}
+
+.post-box-container-popup {
+    display: flex;
+}
+.post-name-wrapper-popup {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+}
+.frnd-name-popup {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: -5px;
+    margin-bottom: 3px;
+}
+.posted-time-popup {
+    font-size: 11px;
+    color: grey;
+}
+.more-icon-post-popup{
+    float: left;
+}
+.post-wrapper-popup {
+    display: flex;
+    flex-direction: column;
+}
+.post-bottom-wrapper-popup {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+.post-title-popup {
+    font-family: inherit;
+    font-size: 14px;
+    margin-left: 10px;
+    margin-top: 25px;
+    margin-bottom: 40px;
+}
+.post-image-popup{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    align-content:center;
+    margin: auto;
+    max-height: 95vh;
+}
+.post-image-popup img{
+    max-width: 100%;
+    max-height: 95vh;
+
+}
+.post-likes-popup {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-family: inherit;
+    margin-left: 20px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+.post-likes-popup svg{
+    width: 20px;
+    height: 20px;
+    color:crimson;
+}
+
+.post-response-popup {
+    display: flex;
+    align-items: center;
+    width: 23%;
+    justify-content: center;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.post-response-popup span{
+    font-size: 12px;
+    margin-left: 6px;
+    padding: 0;
+}
+.post-response-popup svg{
+    width: 20px;
+    height: 20px;
+    color: var(--blueclr);
+}
+.post-response-popup:hover{
+    background-color: aliceblue;
+}
+
+.post-options-wrapper-popup {
+    position: absolute;
+    display:flex;
+    right: 0px;
+    top: 50px;
+}
+
+.feed-option-inactive-popup {
+    display: none;
+}
+
+
+

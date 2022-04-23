@@ -1,0 +1,67 @@
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0;
+}
+.profile-description p{
+    margin: 5px 8px;
+    font-size: 14px;
+    font-family: inherit;
+    text-align: center;
+}
+.profile-details-left {
+    width: 350px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px 0px rgba(130,130,130,1);
+    background-color: white;
+}
+.profile-describtion span{
+    padding: 0;
+    margin: 10px 5px 0 0;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: bold;
+}
+.profile-description h5{
+    margin: 10px 10px;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.profile-info-logo {
+    display: flex;
+    margin: 10px 5px;
+    align-items: center;
+}
+
+.profile-info-logo svg{
+    color: gray;
+}
+.profile-info-logo span{
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+.profile-edit-button {
+    font-size: 16px;
+    font-family: inherit;
+    width: 340px;
+    background-color: rgb(235, 232, 232);
+    align-items: center;
+    margin-left: 0px;
+    padding: 8px 6px;
+    border-radius: 6px;
+    color: black;
+    text-align: center;
+}
+
+.profile-edit-button:hover { 
+    background-color: rgb(205, 204, 204);
+
+}

@@ -1,0 +1,48 @@
+.nav-options-popup {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    position: absolute;
+    margin-top: 10px;
+    width: 200px;
+    background-color:white;
+    height: fit-content;
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px 0px rgba(130,130,130,1);
+    top: 40px;
+    right: 22px;
+    padding:10px 0px;
+}
+.option-line{
+    display: flex;
+    align-items: center;
+    margin: 2px 15px;
+    font-size: 13px;
+    padding: 4px 6px;
+    border-radius: 6px;
+    color: var(--blueclr);
+}
+.option-line:hover{
+    background-color: rgb(239, 239, 239);
+}
+.option-line:active{
+    transform: scale(0.98);
+}
+.option-line span{
+    margin-left: 10px ;
+}
+
+.search-result{
+    color: black;
+    padding: 5px;
+}
+.search-results div{
+    font-size: 14px;
+    color: rgb(89, 89, 89);
+    text-decoration: 'none' 
+}
+.search-results div:hover{
+    color: black;
+     
+}

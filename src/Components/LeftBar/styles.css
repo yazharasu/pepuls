@@ -1,0 +1,145 @@
+.leftbar-container{
+    overflow-y: scroll;
+    height: 100vh;
+    position: fixed;
+}
+.menu-list {
+    list-style: none;
+    margin: 20px 10px;
+}
+.menu-title.profile-name{
+    text-transform: capitalize;
+    font-weight: bold;
+    margin-left: 0;
+}
+
+.leftbar-container::-webkit-scrollbar{
+    width: 9px;
+}
+.leftbar-container::-webkit-scrollbar-thumb{
+    background-color: rgb(210, 226, 247);
+}
+.leftbar-container::-webkit-scrollbar-track{
+    background-color:aliceblue;
+}
+
+.list-ele{
+    margin: 0px;
+    padding: 0;
+    align-items: left;
+    display: flex;
+    padding-left: 20px;
+    border-radius: 10px;
+}
+.menu-logo {
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    align-self: center; 
+}
+
+.profile-link img{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+}
+.profile-name{
+    margin-left: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+.menu-list p{
+    font-size: 15px;
+    color:var(--blueclr);
+    font-family: 'Roboto';
+    margin-left: 12px;
+    margin-top: 12px;
+    margin-bottom: 10px;
+}
+
+.people-logo {
+    color: var(--redclr);
+}
+.group-logo {
+    color: var(--orangeclr);
+}
+.videos-logo {
+    color: var(--blueclr);
+}
+.saved-logo {
+    color: darkgreen;
+}
+.pages-logo {
+    color: var(--redclr);
+}
+.events-logo {
+    color: var(--blueclr);
+}
+.weather-logo {
+    color: var(--orangeclr);
+}
+.menu-list .list-ele:hover {
+    background-color: rgb(214, 235, 254);
+}
+button{
+    align-items: center;
+    width: 150px;
+    border: none ;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: 'Roboto';
+    font-size: 16px;
+    background-color: aliceblue;
+}
+
+.sidebar-frnds-list {
+    list-style: none;
+    margin: 0px;
+    padding-left: 0;
+}
+
+.sidebar-frnd-img {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px; 
+    object-fit: cover;
+}
+.sidebar-frnds-list li{
+    display: flex;
+    align-items: center ;
+    margin: 6px 0px;
+    padding-left: 15px;
+    border-radius: 10px;
+}
+.sidebar-frnds-list span{
+    font-size: 14px;
+    margin: 8px;
+    font-family: 'Roboto';
+}
+.frnds-online {
+    display: flex;
+}
+.arrow-button{
+    display: flex;
+    margin-left: 25px;
+    align-items: center;
+    border-radius: 50%;
+}
+.arrow-button svg{
+    align-items: center;
+    margin: 5px;
+}
+
+.sidebar-frnds-list li:hover{
+    background-color: aliceblue;
+}
+
+hr{
+    margin: 3px;
+    padding: 0;
+}
+.onlineNotActive {
+    display: none;
+}

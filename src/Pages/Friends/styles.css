@@ -1,0 +1,36 @@
+.profile-header-comp, .top-navbar-comp {
+    width: 100vw;
+}
+
+.friends-container {
+    background-color:aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    max-width: 100vw;
+}
+.friends-sub-container{
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+}
+.following-friends-list{
+    background-color: white;
+    padding: 5px 15px;
+    height: 400px;
+    margin: 20px 0px;
+    border-radius: 20px;
+    
+}
+
+.following-friends-list h5{
+    font-size: 20px;
+    color: var(--blueclr);
+    margin:10px 10px 5px 10px;
+}
+.following-friends-list p{
+    font-size: 16px;
+    margin: 0px 10px;
+    font-size: 14px;
+    color: var(--blueclr);
+}

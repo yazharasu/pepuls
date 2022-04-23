@@ -1,0 +1,111 @@
+.login-page-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
+}
+.login-page-top-container {
+    width: 270px;
+    padding: 20px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+.hr-text {
+    line-height: 1em;
+    position: relative;
+    outline: 0;
+    border: 0;
+    color: black;
+    text-align: center;
+    height: 1.5em;
+    opacity: .5;
+}
+.login-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    font-size: 20px;
+    height: fit-content;
+}
+.login-wrapper .login-input {
+    margin: 10px;
+    padding: 6px;
+    border: 1px solid #818078;
+    border-radius: 4px;
+    background-color: rgb(246, 251, 255);
+}
+.login-submit, .google {
+    border: #818078 1px solid;
+    margin: 10px;
+    padding: 6px;
+    width: 230px;
+    height: 30px;
+    text-align: center;
+    background-color: var(--blueclr);
+    color: white;
+    border-radius: 4px;
+}
+button.google {
+    padding: 2px;
+    margin: 4px;
+    width: 230px;
+    height: 40px;
+}
+.google div {
+    height: 20px;
+}
+.google {
+    display: flex;
+    justify-content: center;
+}
+.login-submit:active , .google:active {
+    transform:scale(0.98);
+}
+.login-page-top-container h5{ 
+    font-size: 24px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: var(--blueclr);
+}
+.hr-text:before {
+    content: '';
+    background: linear-gradient(to right, transparent, #818078, transparent);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+}
+.hr-text:after {
+    content: attr(data-content);
+    position: relative;
+    display: inline-block;
+    color: black;
+    padding: 0 .5em;
+    line-height: 1.5em;
+    color: #818078;
+    background-color: #fcfcfa;
+}
+.login-page-bottom-container {
+    width: 250px;
+    padding: 20px;
+    height: 50px;
+    background-color: white;
+    margin-top: 20px;
+    font: 16px;
+}
+.signup-link{
+    font-size: 14px;
+    text-align: center;
+}
+.signup-link span{
+    font-weight: bold;
+    color: var(--redclr);
+}

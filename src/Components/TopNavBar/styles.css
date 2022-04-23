@@ -1,0 +1,149 @@
+.appbar-container{
+    margin: 0;
+    padding: 0;
+    box-shadow: 0px 3px 6px 0px rgba(227,227,227,1);
+    width: 100vw;
+    height: fit-content;
+    position: fixed;
+    z-index: 100;
+}
+.appbar{
+    margin: 0;
+    padding: 0;
+    height: 60px;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--bg1);
+}
+.image-container {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+.image-container div{
+    display:block;
+    height: 40px;
+    width: 43px;
+    margin: 0px;
+    padding: 0px;
+    border-radius: 50%;
+    background-color: var(--blueclr);
+    text-align: center;
+    justify-content: right;
+    align-items: center;
+}
+.logo{
+    font-size: 30px;
+    font-weight: bold;
+    padding: 2px 0 2px;
+    margin: 0px;
+    color: var(--whiteclr);
+    font-family: 'Copperplate';
+}
+.app-name {
+    color: var(--blueclr);
+    flex: 4;    
+}
+.app-name h3{
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 24px;
+    font-family: 'Roboto';
+    letter-spacing: .1em;
+}
+.app-name span{
+    color: var(--redclr);
+}
+.search-bar-container{
+    position: relative;
+}
+.search-bar{
+    flex: 3;
+    display: flex;
+    margin: 0 100px;
+    padding: 0px 10px;
+    width:  350px;
+    background-color: aliceblue;
+    height: 35px;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: left;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+}
+.search-bar .search-people{
+    border: none;
+    background-color: aliceblue;
+    width: 85%;
+    margin: 0px 10px;
+    color: gray;
+    font-size: 15px;
+}
+.search-icon {
+    margin: 0px auto;
+}
+.search-bar-active{
+    position: absolute;
+    top: 0  ;
+}
+
+input:focus{
+    outline: none;
+}   
+.search-bar:focus-within{
+    border: 2px rgb(175, 216, 252) solid ;
+}
+
+.app-icons{
+    flex: 3;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: space-around;
+    text-align: center;
+}
+.app-icons div svg{
+    height: 25px;
+    width: 25px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.app-icons div {
+    border-radius: 50%;
+    padding: 8px 10px ;
+    position: relative;
+}
+.app-icons img {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    margin: 0;
+}
+.app-icons div:hover{
+    background-color: aliceblue;
+}
+.app-icons div p{
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    top: 5px;
+    right: 5px;
+    margin: 0px;
+    background-color: var(--redclr);
+    font-size: 10px;
+    color: white;
+    border-radius: 50%;
+    padding: 3px;
+}
+.arrow-down {
+    padding: 0;
+}

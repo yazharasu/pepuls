@@ -1,0 +1,215 @@
+.post-main-container {
+    background-color: white;
+    position: relative;
+    width: 420px;
+    height: fit-content;
+    margin: 5px 10px;
+    padding-top: 6px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px 0px rgba(130,130,130,1);
+}
+.post-box-container {
+    display: flex;
+}
+.post-name-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+}
+.frnd-name {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: -5px;
+    margin-bottom: 3px;
+    text-decoration: none;
+    color: inherit;
+    text-transform:capitalize;
+}
+.posted-time {
+    font-size: 11px;
+    color: grey;
+}
+.more-icon-post{
+    float: left;
+    margin-right: 10px;
+}
+.post-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.post-bottom-wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+.post-title {
+    margin: 6px 15px;
+    font-family: inherit;
+    font-size: 14px;
+}
+.post-image-con{
+    width: 100%;
+    height: fit-content;
+}
+.post-image-inactive {
+    display: none;
+}
+
+.post-image-img{
+    max-width: 100%;
+    height: fit-content;
+    max-height: 900px;
+}
+
+
+
+.post-likes {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-family: inherit;
+    margin-left: 20px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+.post-likes svg{
+    width: 20px;
+    height: 20px;
+    color:crimson;
+}
+
+.post-response {
+    display: flex;
+    align-items: center;
+    width: 23%;
+    justify-content: center;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.post-response span{
+    font-size: 12px;
+    margin-left: 6px;
+    padding: 0;
+}
+.post-response svg{
+    width: 20px;
+    height: 20px;
+    color: var(--blueclr);
+}
+.post-response:hover{
+    background-color: aliceblue;
+}
+
+.post-options-wrapper {
+    position: absolute;
+    display:flex;
+    right: 0px;
+    top: 50px;
+}
+.feed-option-inactive {
+    display: none;
+}
+.liked-post svg, .liked-word{
+    color: rgb(240, 0, 0);
+}
+.comments-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 10px 5px 10px;    
+    margin: 0;
+}
+
+.new-comment, .cmt-details {
+    display: flex;
+    margin-top:0;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    align-items: center;
+    justify-content: space-between;
+}
+.comment-text{
+    width: 320px;
+    font-size: 12px;
+    border-radius: 6px;
+    border: 1px solid rgb(84, 165, 235);
+    background-color: aliceblue;
+    height: 20px;
+    text-overflow: clip ;
+}
+.comment-submit-but{
+    color: var(--blueclr);
+    border: none;
+    border-radius: 4px;
+    padding: 5px 6px;
+    font-size: 12px;
+}
+
+.comment-submit-but:hover{
+    background-color: rgb(211, 211, 211);
+}
+.comment-submit-but:active{
+    transform: scale(.98);
+}
+.all-comments {
+    display: flex;
+    flex-direction: row;
+    padding: 4px;
+    margin-top: 4px;
+    margin-left: 30px;
+    width: fit-content;
+    height: fit-content;
+    justify-content: left;
+    align-items: center;
+    border: solid 1px rgb(211, 211, 211);
+    border-radius: 8px;
+    background-color: aliceblue;
+}
+.cmt-username {
+  color: var(--blueclr);
+  font-size: 11px;
+  font-weight:500;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 2px;
+}
+.cmt-cmt {
+   font-size: 11px;
+   margin-left: 10px;
+   margin-right: 10px;
+   overflow-wrap: normal;
+}
+.cmt-time{
+    font-size: 10px;
+    color: gray;
+    float: left;
+    margin-left: 35px;
+    padding: 0;
+}
+
+.post-comment {
+    position: relative;
+}
+.post-comment div {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 9px;
+    background-color: var(--redclr);
+    padding: 2px 3px;
+    border-radius: 50%;
+    color: var(--whiteclr);
+}
+
+.cmt-user-data {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cmt-user-image {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}

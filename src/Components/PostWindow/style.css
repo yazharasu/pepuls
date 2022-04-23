@@ -1,0 +1,100 @@
+.post-container{
+    padding: 10px 0px;
+    margin: 15px 10px;
+    border-radius: 10px;
+    width: 450px;
+    background-color: white;
+    text-align: center;
+    height: fit-content;
+    box-shadow: 0px 0px 2px 0px rgba(130,130,130,1);
+}
+.post-box-container{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin: 5px 0px;
+}
+.post-menu-container {
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    margin: 0px 25px;
+}
+.profile-logo {
+    margin: 0px 10px;
+    width: 10%;
+}
+.profile-logo img{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+.post-box{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    padding-left: 10px;
+    border: none;
+    outline: none;
+}
+.post-box div{
+    width: 90%;
+    border-radius: 10px;
+    font-size: 13px;
+    color: gray;
+    font-family: inherit;
+    text-align: left;
+    padding: 14px 5px;
+    height: 20px;
+    background-color: aliceblue;
+}
+.post-box:focus{
+    border: 2px solid rgb(175, 216, 252)  ;
+    height: 42px;
+}
+.post-submit-button{
+    padding: 5px;
+    margin: 8px;
+    background-color: aliceblue;
+    border: none;
+    color: gray;
+    border-radius: 4px;
+    font-size: 12px;
+    font-family: 'Roboto';
+}
+.post-submit-button:active{
+    transform: scale(0.98);
+}
+
+.post-content, .post-feeling, .post-location  {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    width: 120px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin: 0;
+}
+.post-content span, .post-feeling span, .post-location span {
+    font-size: 12px;
+    font-weight: bold;
+    font-family: 'Roboto';
+    margin-left: 6px;
+    color: gray;
+}
+.post-content:hover, .post-feeling:hover, .post-location:hover {
+    background-color: aliceblue ;
+}
+
+.post-content svg{
+    color: var(--redclr)
+}
+.post-feeling svg{
+    color: green
+}
+.post-location svg{
+    color: var(--blueclr);
+
+}
+

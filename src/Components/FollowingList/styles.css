@@ -1,0 +1,27 @@
+.following-list-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+}
+.following-list {
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    justify-content:baseline;
+    align-items: left;
+    margin: auto;
+}
+.following-profile  {
+    padding: 5px;
+}
+.following-profile img{
+    margin: 5px;
+    width: 75px;
+    height: 75px;
+    border-radius: 6px;
+}

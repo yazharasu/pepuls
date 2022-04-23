@@ -1,0 +1,71 @@
+.edit-profile-inactive{
+    display: none;
+}
+.edit-profile{
+    display:block;
+}
+.edit-profile-popup {
+    background-color: aliceblue;
+}
+
+.edit-profile-popup {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.profile-container {
+    background-color:aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    max-width: 100vw;
+}
+.profile-sub-container{
+    width: 1000px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+.profile-page-left {
+    display: flex;
+    position:static;
+    flex-direction: column;
+    align-items: center;
+}
+.profile-header-comp, .top-navbar-comp {
+    width: 100vw;
+}
+.profile-header{
+    padding-top: 40px;
+    width: 100%;
+}
+.profile-post-window-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.following-profile-list {
+    width: 350px;
+    padding: 10px;
+    margin: 8px 0;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px 0px rgba(130,130,130,1);
+}
+.following-profile-list h5{
+    padding: 0;
+    margin: 10px 5px 0 0;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: bold;
+}
+.following-profile-list p{
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    font-size: 14px;
+    color: gray;
+}
