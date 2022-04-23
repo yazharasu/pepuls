@@ -5,13 +5,13 @@ export const LoginCall = async (userCredential, dispatch) => {
   
   try {
     if(userCredential.tokenId) {
-      await axios.post('https://pepuls.herokuapp.com/api/auth/googlelogin', userCredential)
+      await axios.post('pepuls.herokuapp.com/api/auth/googlelogin', userCredential)
         .then( res => {
           dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
       })
       
     }else {
-      const res = await axios.put("https://pepuls.herokuapp.com/api/auth/login", userCredential);
+      const res = await axios.put("pepuls.herokuapp.com/api/auth/login", userCredential);
 
       if(res.data.username) {
         dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
