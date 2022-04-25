@@ -5,7 +5,7 @@ export const LoginCall = async (userCredential, dispatch) => {
   
   try {
     if(userCredential.tokenId) {
-      await axios.post('https://pepuls.herokuapp.com/api/auth/googlelogin', userCredential)
+      await axios.post("https://pepuls.herokuapp.com/api/auth/googlelogin", userCredential)
         .then( res => {
           dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
       })

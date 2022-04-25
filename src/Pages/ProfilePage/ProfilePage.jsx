@@ -20,7 +20,6 @@ export default function ProfilePage( { postWindowTrigger, postWindowHandler, clo
   const [ profilePosts, setProfilePosts ] = useState([]);
 
   console.log(profileUser)
-  
 
   useEffect(() => {
     const getUserProfilePosts = async () => {
