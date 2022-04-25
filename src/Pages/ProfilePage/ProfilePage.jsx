@@ -20,7 +20,7 @@ export default function ProfilePage( { postWindowTrigger, postWindowHandler, clo
   const [ profilePosts, setProfilePosts ] = useState([]);
 
   if(profileUser.data) {
-    profileUser = profileUser.data;
+    const profileUser = profileUser.data;
   }
 
   console.log(profileUser)
