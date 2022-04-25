@@ -19,6 +19,10 @@ export default function ProfilePage( { postWindowTrigger, postWindowHandler, clo
   const [ editPopup, setEditPopup ] = useState(false);
   const [ profilePosts, setProfilePosts ] = useState([]);
 
+  if(profileUser.data) {
+    profileUser = profileUser.data;
+  }
+
   console.log(profileUser)
 
   useEffect(() => {

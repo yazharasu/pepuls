@@ -23,6 +23,11 @@ export default function LeftBar() {
   const [ onlineFrndsList, setOnlineFrndsList ] = useState( [ ] );
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
 
+  if(profileUser.data) {
+    profileUser = profileUser.data;
+  }
+  console.log(profileUser)
+
   useEffect(() => {
     if (currentUser.followings[0]) {
       currentUser.followings.followings.forEach( (friend) => {

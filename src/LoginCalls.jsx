@@ -9,7 +9,7 @@ export const LoginCall = async (userCredential, dispatch) => {
         .then( res => {
           dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
       })
-      
+
     }else {
       const res = await axios.put("https://pepuls.herokuapp.com/api/auth/login", userCredential);
 
