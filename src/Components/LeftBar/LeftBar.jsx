@@ -18,7 +18,7 @@ import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDown
 export default function LeftBar() {
   const currentUserContext = useContext(UserContext);
   const currentUser = currentUserContext.user;
-  const { profileUser, setProfileUser } = useContext(ProfileContext);
+  var { profileUser, setProfileUser } = useContext(ProfileContext);
   const [ onlineFrnds, setOnlineFrnds ] = useState(true);
   const [ onlineFrndsList, setOnlineFrndsList ] = useState( [ ] );
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
@@ -27,6 +27,7 @@ export default function LeftBar() {
     profileUser = profileUser.data;
   }
   console.log(profileUser)
+
 
   useEffect(() => {
     if (currentUser.followings[0]) {
