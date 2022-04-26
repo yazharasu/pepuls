@@ -15,12 +15,12 @@ import EditProfile from '../../Components/EditProfile/EditProfile';
 
 
 export default function ProfilePage( { postWindowTrigger, postWindowHandler, closeWindowHandler, searchActive, setSearchActive } ) {
-  const profileUser = useContext(ProfileContext).profileUser;
+  var profileUser = useContext(ProfileContext).profileUser;
   const [ editPopup, setEditPopup ] = useState(false);
   const [ profilePosts, setProfilePosts ] = useState([]);
 
   if(profileUser.data) {
-    const profileUser = profileUser.data;
+    profileUser = profileUser.data;
   }
 
   console.log(profileUser)
