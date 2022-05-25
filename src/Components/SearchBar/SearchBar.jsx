@@ -18,7 +18,7 @@ function SearchBar( {setSearchActive} ) {
   useEffect(() => {
     search_bar.current.focus();
     const getfilteredData = async () => {
-      const filtered = await axios.get(`https://pepuls.herokuapp.com/api/users/search/${searchTerm}`)
+      const filtered = await axios.get(`users/search/${searchTerm}`)
       setFilteredData( filtered.data );
     }
     (searchTerm) && getfilteredData();

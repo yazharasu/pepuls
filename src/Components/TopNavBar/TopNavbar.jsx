@@ -12,7 +12,7 @@ const PF = process.env.REACT_APP_PUBLIC_FOLDER;
 export default function TopNavbar( { setSearchActive } ) {
   const [ navBarOptions, setNavBarOptions ] = useState(false);
   const currentUserContext = useContext(UserContext);
-  const currentUser = currentUserContext.user;
+  const currentUser = currentUserContext.user.data || currentUserContext.user ;
  
   // const notiFollowersHandler = () => {
   //   setFollowNotiActive(!followNotiActive);

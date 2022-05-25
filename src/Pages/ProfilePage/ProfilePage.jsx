@@ -15,28 +15,32 @@ import EditProfile from '../../Components/EditProfile/EditProfile';
 
 
 export default function ProfilePage( { postWindowTrigger, postWindowHandler, closeWindowHandler, searchActive, setSearchActive } ) {
-  var profileUser = useContext(ProfileContext).profileUser;
   const [ editPopup, setEditPopup ] = useState(false);
   const [ profilePosts, setProfilePosts ] = useState([]);
+  let profileUser = useContext(ProfileContext).profileUser
 
-  if(profileUser.data) {
-    profileUser = profileUser.data;
-  }
-
-  console.log(profileUser)
+  if (profileUser !== null) {
+    if (profileUser.data) {
+      profileUser = profileUser.data;
+    }
+  };
 
   useEffect(() => {
     const getUserProfilePosts = async () => {
-      const resposne = await axios.get(`https://pepuls.herokuapp.com/api/posts/profile/${profileUser.email}`);
-      if(resposne.data) {
+      const profile_user_email = profileUser.email;
+      const response = await axios.get(`posts/profile/${profile_user_email}`);
+      if(response.data.length !== undefined) {
         setProfilePosts(  
-          resposne.data.sort((p1, p2) => {
+          response.data.sort((p1, p2) => {
           return new Date(p2.createdAt) - new Date(p1.createdAt);
           }) )
+      }else {
+        setProfilePosts([]);
       }
       }
     getUserProfilePosts();
   }, [profileUser]);
+
 
   return (
     <>
@@ -52,7 +56,7 @@ export default function ProfilePage( { postWindowTrigger, postWindowHandler, clo
     <TopNavbar className='top-navbar-comp' setSearchActive={setSearchActive} />
     <div className= { (searchActive) ? 'search-bar-active' : 'search-bar-inactive'} > 
       <SearchBar setSearchActive={setSearchActive}  />
-    </div>
+    </div> 
  
     <div className="profile-header">
       <ProfileHeader className='profile-header-comp' setEditPopup={setEditPopup} />
@@ -86,7 +90,7 @@ export default function ProfilePage( { postWindowTrigger, postWindowHandler, clo
           <PostWindow postWindowHandler={postWindowHandler} />
         </div>
         <div className='feedbar-main-container' >
-          {profilePosts && profilePosts.map( (post) => {
+          {profilePosts.data && profilePosts.map( (post) => {
             return <Post post={post} /> 
           })}
         </div>

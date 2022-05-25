@@ -20,7 +20,7 @@ export default function CreateProfile() {
         password: password.current.value,
       }; 
       try {
-        await axios.post("https://pepuls.herokuapp.com/api/auth/register", user);
+        await axios.post("auth/register", user);
         navigate("/");
       } catch (err) {
         console.log(err);

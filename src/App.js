@@ -1,5 +1,4 @@
 import React, { useState, useContext } from 'react';
-import './App.css';
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { UserContext } from './Contexts/UserContext';
 import ProfileContext from './Contexts/ProfileContext';
@@ -12,11 +11,21 @@ import Friends from './Pages/Friends/Friends';
 
 function App() {
   const currentUserContext = useContext(UserContext);
-  const currentUser = currentUserContext.user;
+  let currentUser;
+
+  if (currentUserContext.user !== null) {
+    if (currentUserContext.user.data) { 
+      currentUser = currentUserContext.user.data ;
+    } else {
+      currentUser = currentUserContext.user ;
+    }
+  };
+  
   const [ profileUser, setProfileUser ] = useState( currentUser ); 
   const [ postWindowTrigger, setPostWindowTrigger ] = useState(false);
   const [ searchActive, setSearchActive ] = useState(false);
-  
+
+
   const postWindowHandler = () => {
     setPostWindowTrigger(true);
   }
@@ -45,7 +54,7 @@ function App() {
            <Navigate to="/" /> }
             />
           
-          <Route path='/profile' element = { (currentUser) ? 
+          <Route path='/profile' element = { (currentUser) ?  
             <ProfilePage 
               postWindowTrigger={postWindowTrigger} 
               postWindowHandler={postWindowHandler} 

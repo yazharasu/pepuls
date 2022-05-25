@@ -19,7 +19,7 @@ import { Alert } from '@mui/material';
 
 export default function EditProfile( {setEditPopup} ) {
     const currentUserContext = useContext(UserContext);
-    const currentUser = currentUserContext.user;
+    const currentUser = currentUserContext.user.data || currentUserContext.user ;
     const setProfileUser = useContext(ProfileContext).setProfileUser;
     const [updateStatus, setUpdateStatus] = useState('');
     const [profilePic, setProfilePic] = useState([]);
@@ -71,13 +71,13 @@ export default function EditProfile( {setEditPopup} ) {
           data.append("filename", fileName);
           data.append("file", coverPic[0].file);
           try {
-            await axios.post("https://pepuls.herokuapp.com/api/upload", data);
+            await axios.post("upload", data);
           }catch (err) {}
           coverPicName.coverPicture = fileName;
         }; 
 
         try {
-            await axios.put(`https://pepuls.herokuapp.com/api/users/${currentUser.data._id}`, coverPicName );
+            await axios.put(`users/${currentUser.data._id}`, coverPicName );
               window.location.reload();
         }catch (err) {}
     }
@@ -86,7 +86,7 @@ export default function EditProfile( {setEditPopup} ) {
         e.preventDefault();
 
         const editProfile = async () => {
-            const updateUser = await axios.put( `https://pepuls.herokuapp.com/api/users/${currentUser._id}`, {
+            const updateUser = await axios.put( `users/${currentUser._id}`, {
                 username: username.current.value,
                 curentCity:  curentCity.current.value,
                 fromCity:  fromCity.current.value,
@@ -107,12 +107,11 @@ export default function EditProfile( {setEditPopup} ) {
         }
         editProfile();
         const gettingUser = async() => {
-            const user = await axios.get(`https://pepuls.herokuapp.com/api/users/${currentUser._id}`);
+            const user = await axios.get(`users/${currentUser._id}`);
             localStorage.setItem("user", JSON.stringify(user));
         }
         gettingUser();
         setProfileUser(currentUser);
- 
     }
 
 

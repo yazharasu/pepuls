@@ -12,28 +12,29 @@ import PostWindowPopup from '../../Components/PostWindowPopup/PostWindowPopup';
   
 export default function Home( { postWindowTrigger, postWindowHandler, closeWindowHandler, searchActive, setSearchActive  } ) {
   const currentUserContext = useContext(UserContext);
-  const currentUser = currentUserContext.user;
+  const currentUser = currentUserContext.user.data || currentUserContext.user ;
   const [ timelinePosts, setTimelinePosts ] = useState( );
   // const [ notifications, setNotifications ] = useState( { } );
   // const [ newNotiNum, setNewNotiNum ] = useState();
   // const [ notificationActive, setNotificationActive ] = useState(false);
 
-   
   useEffect(() => { 
     const getCurrentUserTimeline = async () => {
-      const res = await axios.get(`https://pepuls.herokuapp.com/api/posts/timeline/${currentUser._id}`)
+      const res = await axios.get(`posts/timeline/${currentUser._id}`)
       if( res.data.value !== 'undefined') {
         setTimelinePosts( 
           res.data.sort((p1, p2) => {
           return new Date(p2.createdAt) - new Date(p1.createdAt);
           })
         )
-      }else{
-        setTimelinePosts([])
       }
     }
     getCurrentUserTimeline();
+
+    console.log( timelinePosts )
   }, [currentUser]);
+
+
 
   // useEffect(() => {
   //   const getUserProfilePosts = async () => {
@@ -98,7 +99,7 @@ export default function Home( { postWindowTrigger, postWindowHandler, closeWindo
           </div>
           
           <div className='feedbar-main-container' >
-            { timelinePosts && timelinePosts.map( (post) => {
+            { (timelinePosts !== undefined) && timelinePosts.forEach( (post) => {
               return <Post post={post} /> } ) 
             }
           </div>

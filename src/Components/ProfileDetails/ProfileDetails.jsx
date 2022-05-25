@@ -10,7 +10,13 @@ import InterestsIcon from '@mui/icons-material/Interests';
 
 
 export default function ProfileDetails( { setEditPopup } ) {
-    const profileUser = useContext(ProfileContext).profileUser;
+    let profileUser = useContext(ProfileContext).profileUser;
+
+    if (profileUser !== null) {
+        if (profileUser.data) {
+        profileUser = profileUser.data;
+        }
+    };
 
   return (
     <div className="profile-details">

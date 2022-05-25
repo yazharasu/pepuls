@@ -17,23 +17,23 @@ import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDown
 
 export default function LeftBar() {
   const currentUserContext = useContext(UserContext);
-  const currentUser = currentUserContext.user;
+  const currentUser = currentUserContext.user.data || currentUserContext.user ;
   var { profileUser, setProfileUser } = useContext(ProfileContext);
   const [ onlineFrnds, setOnlineFrnds ] = useState(true);
   const [ onlineFrndsList, setOnlineFrndsList ] = useState( [ ] );
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
-
-  if(profileUser.data) {
-    profileUser = profileUser.data;
-  }
-  console.log(profileUser)
-
+   
+  if (profileUser !== null) {
+    if (profileUser.data) {
+        setProfileUser(profileUser.data);
+    }
+  };
 
   useEffect(() => {
     if (currentUser.followings[0]) {
-      currentUser.followings.followings.forEach( (friend) => {
+      currentUser.followings[0].followings.forEach( (friend) => {
         const getUser = async () => {
-          const res = await axios.get(`https://pepuls.herokuapp.com/api/users/${friend}`);
+          const res = await axios.get(`users/${friend}`);
           (res.loggedIn === true) && onlineFrndsList.push( ( res.data ) )
           setOnlineFrndsList(onlineFrndsList);
         };

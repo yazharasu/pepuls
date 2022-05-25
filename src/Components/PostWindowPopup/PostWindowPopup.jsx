@@ -13,7 +13,7 @@ import CloseIcon from '@mui/icons-material/Close';
 
 export default function PostWindow( {postWindowTrigger, closeWindowHandler} ) {
   const currentUserContext = useContext(UserContext);
-  const currentUser = currentUserContext.user;
+  const currentUser = currentUserContext.user.data || currentUserContext.user ;
   const [ images, setImages ] = useState(null);
   const [ isFilePicked, setIsFilePicked ] = useState(false);
   const description = useRef();
@@ -38,21 +38,21 @@ export default function PostWindow( {postWindowTrigger, closeWindowHandler} ) {
       data.append("file", images[0].file); 
       newPost.postPicture = fileName;
       try {
-        await axios.post("https://pepuls.herokuapp.com/api/upload", data);
+        await axios.post("upload", data);
       }catch (err) {}
     }; 
 
     try {
-      await axios.post(`https://pepuls.herokuapp.com/api/posts/${currentUser._id}/post`, newPost);
+      await axios.post(`posts/${currentUser._id}/post`, newPost);
         window.location.reload();
     }catch (err) {}
-
+    
   }
 
   return (
     <div className="post-window-main-container" style={{ visibility: postWindowTrigger ? "visible" : "hidden", opacity: postWindowTrigger ? "1" : "0" }}>
       <div className='post-popup-container'>
-      <OutsideClickHandler onOutsideClick= {closeWindowHandler} >
+      <OutsideClickHandler onOutsideClick= {closeWindowHandler} > 
         <div className='post-popup-box-container'>
           <div className='create-post'>
             <div>Create Post</div>

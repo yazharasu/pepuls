@@ -8,7 +8,7 @@ import { GoogleLogin } from 'react-google-login';
 
 
 export default function LoginPage() { 
-  const email = useRef();
+  const email = useRef(); 
   const password = useRef();
   const currentUserContext = useContext(UserContext);
   const err_message = currentUserContext.err_message;

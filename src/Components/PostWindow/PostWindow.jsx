@@ -8,7 +8,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 export default function PostWindow({ postWindowHandler }) {
   const currentUserContext = useContext(UserContext);
-  const currentUser = currentUserContext.user;
+  const currentUser = currentUserContext.user.data || currentUserContext.user ;
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
 
   return (

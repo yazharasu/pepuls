@@ -12,8 +12,22 @@ const UserReducer = (state, action) => {
           user: action.payload,
           isFetching: false,
           error: false,
-          err_message: null, 
+          err_message: null,  
         };
+      case "FOLLOW":
+        return {  
+          user: action.payload,
+          isFetching: false,
+          error: false,
+          err_message: null,  
+        };  
+      case "UNFOLLOW":
+        return {  
+          user: action.payload,
+          isFetching: false,
+          error: false,
+          err_message: null,  
+        };    
       case "LOGIN_FAILURE":
         return {
           user: null,

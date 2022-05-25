@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './styles.css';
 import { UserContext } from '../../Contexts/UserContext';
 import OutsideClickHandler from 'react-outside-click-handler';
-
 import LogoutIcon from '@mui/icons-material/Logout';
 import PersonIcon from '@mui/icons-material/Person';
 import EditIcon from '@mui/icons-material/Edit';
@@ -12,16 +11,14 @@ import axios from 'axios';
 
 function NavBarOptions() {
   const currentUserContext = useContext(UserContext);
-  const currentUser = currentUserContext.user;
-  const [ navOption, setNavOption ] = useState(false);
+  const currentUser = currentUserContext.user.data || currentUserContext.user ;
+  const [ _ , setNavOption ] = useState(false);
 
   const logoutHandler = async () => {
-    await axios.put( 'https://pepuls.herokuapp.com/api/users/logout', { username: currentUser.email });
+    await axios.put('users/logout', { username: currentUser.email });
     localStorage.removeItem("user");
     window.location.reload();
-    console.log(navOption)
   }
-
 
   return (
     <OutsideClickHandler onOutsideClick= { ()=>{ setNavOption(false) } } >

@@ -9,7 +9,7 @@ import axios from 'axios';
 
 export default function FollowersList() {
     const currentUserContext = useContext(UserContext);
-    const currentUser = currentUserContext.user;
+    const currentUser = currentUserContext.user.data || currentUserContext.user ;
     const setProfileUser = useContext(ProfileContext).setProfileUser;
     const [ followersList, setFollowersList ] = useState( [ ] );
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
@@ -19,7 +19,7 @@ export default function FollowersList() {
             setFollowersList([]);
             currentUser.followers[0].followers.forEach( (friend) => {
               const getUser = async () => {
-                const res = await axios.get(`https://pepuls.herokuapp.com/api/users/${friend}`);
+                const res = await axios.get(`users/${friend}`);
                 followersList.push( ( res.data ) );
                 };
               getUser();

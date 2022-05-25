@@ -39,8 +39,9 @@ export default function Friends( { searchActive, setSearchActive } ) {
           <div>
             <h5>Following</h5>
             <p>Following {profileUser.followings[0] ? profileUser.followings[0].followings.length : 0} people</p>
+            <FollowingList />
           </div>
-          <FollowingList />
+          
         </div>
 
         <div className="following-friends-list">

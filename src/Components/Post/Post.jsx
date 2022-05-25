@@ -14,11 +14,10 @@ import MessageIcon from '@mui/icons-material/Message';
 import MobileScreenShareIcon from '@mui/icons-material/MobileScreenShare';
 import RecommendIcon from '@mui/icons-material/Recommend';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
-
-
+ 
 export default function Post( { post } ) {
   const currentUserContext = useContext(UserContext);
-  const currentUser = currentUserContext.user;
+  const currentUser = currentUserContext.user.data || currentUserContext.user ;
   const [ feedOption, setFeedOption ] = useState(false);
   const { profileUser, setProfileUser } = useContext(ProfileContext);
   const [ likes, setLikes ] = useState( post.postLikes.length );
@@ -29,6 +28,12 @@ export default function Post( { post } ) {
   const new_comment = useRef("");
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   
+  if (profileUser !== null) {
+    if (profileUser.data) {
+        setProfileUser(profileUser.data);
+    }
+  };
+
   // getting and setting user using userId from post
   useEffect(() => {
     const getUser = async () => {
@@ -58,7 +63,7 @@ export default function Post( { post } ) {
   // like handler to handle like/dislike
   const likeHandler = async() => {
     try{
-      await axios.put(`https://pepuls.herokuapp.com/api/posts/like`, { userId: currentUser.data._id, postId: post._id });
+      await axios.put(`posts/like`, { userId: currentUser.data._id, postId: post._id });
       setLikes( post.postLikes ? post.postLikes.length : 0);
     } catch(err) { console.log(err) }
 
@@ -72,7 +77,7 @@ export default function Post( { post } ) {
 
   const commentSubHandler = (e) => {
     e.preventDefault();
-    axios.put( `https://pepuls.herokuapp.com/api/posts/${currentUser.data._id}/${post._id}/comment`, { comment : new_comment.current.value } );
+    axios.put( `posts/${currentUser.data._id}/${post._id}/comment`, { comment : new_comment.current.value } );
   }
   
   const FeedOptionHandler = () => {
